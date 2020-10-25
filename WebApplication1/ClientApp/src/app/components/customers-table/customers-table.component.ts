@@ -31,6 +31,7 @@ export class CustomersTableComponent implements OnInit, AfterViewInit, OnDestroy
 
   getRecord(row) {
     this.router.navigate(['/edit-or-create', row]);
+
   }
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
