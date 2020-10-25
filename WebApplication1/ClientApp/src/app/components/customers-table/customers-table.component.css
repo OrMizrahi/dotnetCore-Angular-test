@@ -1,0 +1,31 @@
+table {
+  width: 100%;
+}
+.mat-row:hover {
+  cursor:pointer;
+}
+
+.table-container{
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    margin-bottom:8px;
+}
+
+  .table-container mat-form-field{
+      width:35%;
+  }
+  .cust-table{
+      width:95% !important;
+  }
+
+.no-results {
+  text-align: center !important;
+  margin-top: 55px;
+  color: red;
+  font-size: 1.2rem;
+}
+.id-col {
+ color:blue;
+ text-decoration:underline;
+}

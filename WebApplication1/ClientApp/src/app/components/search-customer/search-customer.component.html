@@ -1,0 +1,34 @@
+<div>
+  <div>
+    <h2 class="main-title">חיפוש לקוח</h2>
+  </div>
+</div>
+
+<mat-spinner *ngIf="loading"></mat-spinner>
+
+<form (ngSubmit)="onSubmit()">
+  <div class="controls-flex">
+    <mat-form-field>
+      <mat-label>Select an identifier</mat-label>
+      <mat-select [(value)]="selectedIdentifier">
+        <mat-option>None</mat-option>
+        <mat-option value="Identity Number">Identity Number</mat-option>
+        <mat-option value="Phone">Phone</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Value</mat-label>
+      <input [(ngModel)]="val" matInput type="number" name="val">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="val == null">
+      Search
+    </button>
+
+  </div>
+
+</form>
+
+<app-customers-table></app-customers-table>
+

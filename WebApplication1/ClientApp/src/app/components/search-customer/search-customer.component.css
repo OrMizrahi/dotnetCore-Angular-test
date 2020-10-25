@@ -1,0 +1,15 @@
+.controls-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+}
+
+  .controls-flex mat-form-field {
+    width:50% !important;
+  }
+
+  .controls-flex button {
+    padding: 7px 25px !important;
+  }
+

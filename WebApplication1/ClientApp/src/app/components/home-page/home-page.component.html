@@ -1,0 +1,5 @@
+<div>
+  <h2 class="main-title">ברוכים הבאים למאגר הלקוחות</h2>
+  <mat-spinner *ngIf="loading"></mat-spinner>
+  <img [hidden]="loading" (load)="onLoad()" src="../../assets/11-1.jpg"/>
+</div>

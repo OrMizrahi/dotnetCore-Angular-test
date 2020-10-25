@@ -1,0 +1,40 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+div.container {
+  margin: 0px 40px;
+}
+
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+form.normal-form {
+  margin: 10px;
+}
+
+.controles-container {
+  width: 100%;
+  padding: 5%;
+}
+
+  .controles-container > * {
+    width: 100%;
+  }
+
+.add-bottom-padding {
+  padding-bottom: 10px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+}
+
+.button-row button {
+  margin: 5px !important;
+  padding:7px 25px !important;
+  margin-bottom:20px !important;
+}
+

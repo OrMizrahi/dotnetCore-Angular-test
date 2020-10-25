@@ -1,0 +1,65 @@
+<div>
+  <div>
+    <h2 class="main-title">יצירת/עדכון פרטי לקוח</h2>
+  </div>
+</div>
+
+<mat-spinner *ngIf="loading"></mat-spinner>
+
+<form #newUserForm="ngForm" (ngSubmit)="onSubmit(newUserForm)" class="normal-form">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+
+        <mat-form-field>
+          <mat-label>Phone Num</mat-label>
+          <input matInput placeholder="0548195555" required [(ngModel)]="Customer.phone" name="phone" #pickedPhone="ngModel" type="number">
+          <mat-error *ngIf="(!pickedPhone.valid && pickedPhone.touched)">Phone number is <strong>required</strong></mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Date Of Birth</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="Customer.dateOfBirth" name="dateOfBirth">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Additional Comments</mat-label>
+          <textarea matInput [(ngModel)]="Customer.comments" name="comments"></textarea>
+        </mat-form-field>
+
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="controles-container">
+
+        <mat-form-field>
+          <mat-label>Identity Number</mat-label>
+          <input #pickedId="ngModel" matInput placeholder="123456789" required [(ngModel)]="Customer.identityNumber" name="identityNumber" type="number">
+          <mat-error *ngIf="(!pickedId.valid && pickedId.touched)">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>First Name</mat-label>
+          <input matInput [(ngModel)]="Customer.firstName" name="firstName">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Last Name</mat-label>
+          <input matInput [(ngModel)]="Customer.lastName" name="lastName">
+        </mat-form-field>
+
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div class="button-row">
+    <button mat-raised-button color="primary" type="submit" [disabled]="!newUserForm.form.valid">
+      Save
+    </button>
+  </div>
+</form>
+
